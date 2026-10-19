@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:completionHint="Elige una opcion"
         android:completionThreshold="1"
-        android:hint="Escribe una 'O' o una 'A'..."
+        android:hint="Escribe para autocompletar..."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
