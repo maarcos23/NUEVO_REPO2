@@ -1,11 +1,18 @@
-package com.example.tema4;
+package com.example.tema4; // Tu nombre de paquete
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.MultiAutoCompleteTextView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,38 +22,89 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 1. Enlazar el Spinner del XML con Java
-        Spinner miSpinner = findViewById(R.id.miSpinner);
+        /* ========================================================
+         * 1. TEXTVIEW (Cambios en tiempo de ejecución)
+         * ======================================================== */
+        /*
+        TextView miTexto = findViewById(R.id.texto);
+        miTexto.setText("Nuevo texto desde Java");
+        miTexto.setTextColor(Color.parseColor("#0000FF"));
+        miTexto.setTypeface(null, Typeface.ITALIC);
+        miTexto.setTextSize(24);
+        */
 
-        // 2. Datos que se mostrarán en la lista desplegable
-        String[] valores = {"Star Wars", "Reservoir dogs", "El Club de la lucha", "Snatch: Cerdos y Diamantes"};
+        /* ========================================================
+         * 2. BUTTON (Eventos de clic)
+         * ======================================================== */
 
-        // 3. Crear el adaptador para vincular los datos al Spinner
-        ArrayAdapter<String> adaptador = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_spinner_item,
-                valores
-        );
-        // Opcional: estilo para la lista desplegada
-        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Button boton1 = findViewById(R.id.boton1);
+        boton1.setOnClickListener(v -> {
+            Toast.makeText(this, "Se ha pulsado el botón", Toast.LENGTH_SHORT).show();
+        });
 
-        miSpinner.setAdapter(adaptador);
 
-        // 4. Listener para capturar el elemento seleccionado
-        miSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                String seleccionado = adapterView.getItemAtPosition(position).toString();
-                System.out.println("Has seleccionado el valor: " + seleccionado);
-
-                // Mensaje en pantalla tipo Toast para ver la selección
-                Toast.makeText(MainActivity.this, "Seleccionado: " + seleccionado, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-                System.out.println("No has seleccionado nada");
+        /* ========================================================
+         * 3. TOGGLEBUTTON (Estado encendido / apagado)
+         * ======================================================== */
+        /*
+        ToggleButton miToggle = findViewById(R.id.miToggleButton);
+        miToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                Toast.makeText(this, "Estado: Pulsado", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Estado: No Pulsado", Toast.LENGTH_SHORT).show();
             }
         });
+        */
+
+        /* ========================================================
+         * 4. IMAGEBUTTON (Clic en imagen)
+         * ======================================================== */
+        /*
+        ImageButton miImageButton = findViewById(R.id.miImageButton);
+        miImageButton.setOnClickListener(v -> {
+            Toast.makeText(this, "Pulsado botón con imagen", Toast.LENGTH_SHORT).show();
+        });
+        */
+
+        /* ========================================================
+         * 5. EDITTEXT (Leer el texto introducido)
+         * ======================================================== */
+        /*
+        EditText textoEmail = findViewById(R.id.texto_email);
+        // Para leer el texto cuando lo necesites:
+        // String email = textoEmail.getText().toString();
+        */
+
+        /* ========================================================
+         * 6. AUTOCOMPLETETEXTVIEW (Autocompletar una palabra)
+         * ======================================================== */
+        /*
+        AutoCompleteTextView miTextoAuto = findViewById(R.id.miTextoAuto);
+        String[] opciones = {"Opcion1", "Opcion2", "Opcion3", "Opcion4", "Android", "Auto"};
+        ArrayAdapter<String> adaptador = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_dropdown_item_1line,
+                opciones
+        );
+        miTextoAuto.setAdapter(adaptador);
+        */
+
+        /* ========================================================
+         * 7. MULTIAUTOCOMPLETETEXTVIEW (Autocompletar múltiples palabras)
+         * Nota: Requiere setTokenizer para saber qué separa cada elemento
+         * ======================================================== */
+        /*
+        MultiAutoCompleteTextView miMultiAuto = findViewById(R.id.miMultiAuto);
+        String[] opcionesMulti = {"Madrid", "Barcelona", "Valencia", "Sevilla", "Zaragoza", "Bilbao"};
+        ArrayAdapter<String> adaptadorMulti = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_dropdown_item_1line,
+                opcionesMulti
+        );
+        miMultiAuto.setAdapter(adaptadorMulti);
+        // Indispensable: el Tokenizer separa sugerencias tras una coma (",")
+        miMultiAuto.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+        */
     }
 }

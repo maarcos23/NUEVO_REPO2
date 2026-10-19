@@ -1,21 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="20dp"
+    android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
-    <Spinner
-        android:id="@+id/miSpinner"
+    <!-- ======================================================== -->
+    <!-- 1. TEXTVIEW                                              -->
+    <!-- ======================================================== -->
+    <!--
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="probando el text view"
+        android:textColor="#CDDC39"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:typeface="monospace" />
+    -->
+
+    <!-- ======================================================== -->
+    <!-- 2. BUTTON                                                -->
+    <!-- ======================================================== -->
+    <!--
+    <Button
+        android:id="@+id/boton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Púlsame" />
+    -->
+    <Button
+        android:id="@+id/boton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Púlsame" />
+
+    <!-- ======================================================== -->
+    <!-- 3. TOGGLEBUTTON                                          -->
+    <!-- ======================================================== -->
+    <!--
+    <ToggleButton
+        android:id="@+id/miToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:textOff="No Pulsado"
+        android:textOn="Pulsado" />
+    -->
+
+    <!-- ======================================================== -->
+    <!-- 4. IMAGEBUTTON                                           -->
+    <!-- Nota: Para probar este, pon una imagen en res/drawable   -->
+    <!-- ======================================================== -->
+    <!--
+    <ImageButton
+        android:id="@+id/miImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher" />
+    -->
+
+    <!-- ======================================================== -->
+    <!-- 5. EDITTEXT                                              -->
+    <!-- ======================================================== -->
+    <!--
+    <EditText
+        android:id="@+id/texto_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="Ingrese correo electronico"
+        android:inputType="textEmailAddress" />
+    -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- ======================================================== -->
+    <!-- 6. AUTOCOMPLETETEXTVIEW                                  -->
+    <!-- ======================================================== -->
+    <!--
+    <AutoCompleteTextView
+        android:id="@+id/miTextoAuto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="Elige una opcion"
+        android:completionThreshold="1"
+        android:hint="Escribe para autocompletar..." />
+    -->
+
+    <!-- ======================================================== -->
+    <!-- 7. MULTIAUTOCOMPLETETEXTVIEW                             -->
+    <!-- (Permite autocompletar varias palabras separadas)        -->
+    <!-- ======================================================== -->
+    <!--
+    <MultiAutoCompleteTextView
+        android:id="@+id/miMultiAuto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1"
+        android:hint="Escribe varias opciones separadas por coma..." />
+    -->
+
+</LinearLayout>
