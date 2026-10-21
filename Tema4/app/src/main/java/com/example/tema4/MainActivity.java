@@ -19,6 +19,13 @@ import android.widget.ToggleButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.RatingBar;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -147,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Casilla desmarcada", Toast.LENGTH_SHORT).show();
             }
         });
-        */// ========================================================
+        ========================================================
         // 9. PROBAR RADIOBUTTON (activity_radio_button.xml)
         // ========================================================
 
@@ -172,5 +179,71 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // ========================================================
+        // 10. PROBAR SWITCH (activity_switch.xml)
+        // ========================================================
+        setContentView(R.layout.activity_swich);
+
+        Switch switch1 = findViewById(R.id.switch1);
+        TextView textViewStatus = findViewById(R.id.textViewStatus);
+
+        // Listener para el cambio de estado del Switch
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    textViewStatus.setText("Estado: Encendido");
+                } else {
+                    textViewStatus.setText("Estado: Apagado");
+                }
+            }
+        });
+
+        // ========================================================
+        // 11. PROBAR SEEKBAR (activity_seek_bar.xml)
+        // ========================================================
+        setContentView(R.layout.activity_seekbar);
+
+        SeekBar seekBar = findViewById(R.id.seekBar);
+        TextView textViewProgress = findViewById(R.id.textViewProgress);
+
+        // Listener para cambios en el SeekBar (Diapositiva del tema)
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            // Método que se llama cuando cambia el progreso
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textViewProgress.setText("Valor: " + progress);
+            }
+
+            // Método que se llama cuando el usuario empieza a tocar el SeekBar
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // Aquí puedes añadir lógica si necesitas hacer algo al empezar a moverlo
+            }
+
+            // Método que se llama cuando el usuario deja de tocar el SeekBar
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // Aquí puedes añadir lógica si necesitas hacer algo al terminar de moverlo
+            }
+        });
+        */
+        // ========================================================
+        // 12. PROBAR RATINGBAR (activity_rating_bar.xml)
+        // ========================================================
+        setContentView(R.layout.activity_rating_bar);
+
+        RatingBar ratingBar = findViewById(R.id.ratingBar);
+        TextView textViewRating = findViewById(R.id.textViewRating);
+
+        // Listener para cambios en la calificación del RatingBar
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                // Actualizar el TextView con la calificación seleccionada
+                textViewRating.setText("Calificación: " + rating);
+            }
+        });
     }
 }
