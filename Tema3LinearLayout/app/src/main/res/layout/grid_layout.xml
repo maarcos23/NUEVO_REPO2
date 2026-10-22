@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:columnCount="4"
-    android:rowCount="5"
+    android:rowCount="6"
     android:orientation="horizontal"
     android:useDefaultMargins="true">
 
@@ -154,6 +154,22 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#5C4B99"
         android:text="+"
+        android:textColor="#FFFFFF" />
+    <!-- Fila 5 -->
+
+    <Button
+        android:id="@+id/btnC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#5C4B99"
+        android:text="C"
+        android:textColor="#FFFFFF" />
+    <Button
+        android:id="@+id/btnAC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#5C4B99"
+        android:text="AC"
         android:textColor="#FFFFFF" />
 
 </GridLayout>
