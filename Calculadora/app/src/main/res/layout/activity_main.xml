@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:columnCount="4"
+    android:rowCount="6"
+    android:orientation="horizontal"
+    android:useDefaultMargins="true">
+
+    <!-- Pantalla / Display superior -->
+    <TextView
+        android:id="@+id/calculadora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_gravity="fill"
+        android:layout_marginBottom="8dp"
+        android:background="#222222"
+        android:gravity="end|center_vertical"
+        android:padding="16dp"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp" />
+
+    <!-- Fila 1 -->
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="1"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="2"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="3"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="/"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarOperacion"/>
+
+    <!-- Fila 2 -->
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="4"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="5"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="6"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btnMult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="*"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarOperacion"/>
+
+    <!-- Fila 3 -->
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="7"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="8"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="9"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btnResta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="-"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarOperacion"/>
+
+    <!-- Fila 4 -->
+    <Button
+        android:id="@+id/btn0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarNumero"/>
+
+    <Button
+        android:id="@+id/btnPunto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="."
+        android:textColor="#FFFFFF"
+        android:onClick="clicarPunto"/>
+
+    <Button
+        android:id="@+id/btnIgual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="="
+        android:textColor="#FFFFFF"
+        android:onClick="clicarIgual"/>
+
+    <Button
+        android:id="@+id/btnSuma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4B5320"
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarOperacion"/>
+    <!-- Fila 5 -->
+
+    <Button
+        android:id="@+id/btnC"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill"
+        android:backgroundTint="#4B5320"
+        android:text="C"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarC"/>
+    <Button
+        android:id="@+id/btnAC"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill"
+        android:backgroundTint="#4B5320"
+        android:text="AC"
+        android:textColor="#FFFFFF"
+        android:onClick="clicarAC"/>
+
+</GridLayout>
