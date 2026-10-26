@@ -8,11 +8,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private TextView tvOperacion;
     private TextView tvDisplay;
+
+
 
     // Variables para guardar el primer número y la operación
     private double num1 = 0.0;
     private String operacion = "";
+
+    private boolean nuevonum = false;
 
 
     @Override
@@ -21,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
         //carga el diseño del xml
         setContentView(R.layout.activity_main);
 
-        // para q se conecte al xml
+        tvOperacion = findViewById(R.id.tvOperacion);
         tvDisplay = findViewById(R.id.calculadora);
+
     }
 
     // numeros
@@ -34,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         // o si venimos de pulsar una operación, limpiamos para poner el nuevo número.
         if (textoActual.equals("0") ) {
             tvDisplay.setText(digito);
-
+            nuevonum= false;
         } else {
             tvDisplay.setText(textoActual + digito);
         }
@@ -47,22 +54,26 @@ public class MainActivity extends AppCompatActivity {
         // Control: Que no se puedan meter 2 comas/puntos en el mismo número
         if (!textoActual.contains(".")) {
             tvDisplay.setText(textoActual + ".");
-
+            nuevonum = false;
         }
     }
 
     //operaciones
 
     public void clicarOperacion(View view) {
+        String textoActual = tvDisplay.getText().toString();
+        if (textoActual.equals("Error")) {
+            return; // evita el crash con parseDouble
+        }
+
         Button b = (Button) view;
         operacion = b.getText().toString();
 
-        // Guardamos lo que hay en pantalla como el primer número
-        num1 = Double.parseDouble(tvDisplay.getText().toString());
+        num1 = Double.parseDouble(textoActual);
+
+        tvOperacion.setText(textoActual + " " + operacion);
         tvDisplay.setText("0");
-
-        // Indicamos que el siguiente número que escribamos empezará limpio
-
+        nuevonum = false;
     }
 
     //borrar
@@ -72,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         tvDisplay.setText("0");
         num1 = 0.0;
         operacion = "";
-
+        nuevonum = false;
     }
 
     // C
@@ -82,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         if (textoActual.length() > 1) {
             // Quitamos el último carácter
             tvDisplay.setText(textoActual.substring(0, textoActual.length() - 1));
+            nuevonum = false;
         } else {
             // Si solo queda un dígito, lo dejamos en "0"
             tvDisplay.setText("0");
@@ -103,11 +115,16 @@ public class MainActivity extends AppCompatActivity {
             if (num2 != 0) {
                 resultado = num1 / num2;
             } else {
+                tvOperacion.setText("");
                 tvDisplay.setText("Error");
+                operacion="";
+                nuevonum= true;
                 return;
             }
         }
 
+        tvOperacion.setText(tvOperacion.getText().toString() + " "
+        + num2 + " =");
 
         if (resultado == (long) resultado) {
             tvDisplay.setText(String.valueOf((long) resultado));
@@ -115,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
             tvDisplay.setText(String.valueOf(resultado));
         }
 
+        operacion = "";
+        nuevonum=true;
 
     }
 
