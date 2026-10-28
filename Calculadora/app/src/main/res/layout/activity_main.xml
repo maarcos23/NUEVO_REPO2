@@ -2,11 +2,11 @@
 <GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:columnCount="4"
-    android:rowCount="6"
+    android:rowCount="7"
     android:orientation="horizontal"
     android:useDefaultMargins="true">
 
@@ -15,8 +15,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_columnSpan="4"
+        android:layout_columnWeight="1"
         android:layout_gravity="fill"
         android:gravity="end"
+        android:maxLines="1"
+        android:ellipsize="start"
         android:text=""
         android:textColor="#888888"
         android:textSize="18sp" />
@@ -27,10 +30,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_columnSpan="4"
+        android:layout_columnWeight="1"
         android:layout_gravity="fill"
         android:layout_marginBottom="8dp"
         android:background="#222222"
         android:gravity="end|center_vertical"
+        android:maxLines="1"
+        android:ellipsize="start"
         android:padding="16dp"
         android:text="0"
         android:textColor="#FFFFFF"
@@ -41,8 +47,10 @@
     <!-- Fila 1 -->
     <Button
         android:id="@+id/btn1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="1"
         android:textColor="#FFFFFF"
@@ -50,8 +58,10 @@
 
     <Button
         android:id="@+id/btn2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="2"
         android:textColor="#FFFFFF"
@@ -59,8 +69,10 @@
 
     <Button
         android:id="@+id/btn3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="3"
         android:textColor="#FFFFFF"
@@ -68,8 +80,10 @@
 
     <Button
         android:id="@+id/btnDiv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="/"
         android:textColor="#FFFFFF"
@@ -78,8 +92,10 @@
     <!-- Fila 2 -->
     <Button
         android:id="@+id/btn4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="4"
         android:textColor="#FFFFFF"
@@ -87,8 +103,10 @@
 
     <Button
         android:id="@+id/btn5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="5"
         android:textColor="#FFFFFF"
@@ -96,8 +114,10 @@
 
     <Button
         android:id="@+id/btn6"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="6"
         android:textColor="#FFFFFF"
@@ -105,8 +125,10 @@
 
     <Button
         android:id="@+id/btnMult"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="*"
         android:textColor="#FFFFFF"
@@ -115,8 +137,10 @@
     <!-- Fila 3 -->
     <Button
         android:id="@+id/btn7"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="7"
         android:textColor="#FFFFFF"
@@ -124,8 +148,10 @@
 
     <Button
         android:id="@+id/btn8"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="8"
         android:textColor="#FFFFFF"
@@ -133,8 +159,10 @@
 
     <Button
         android:id="@+id/btn9"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="9"
         android:textColor="#FFFFFF"
@@ -142,8 +170,10 @@
 
     <Button
         android:id="@+id/btnResta"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="-"
         android:textColor="#FFFFFF"
@@ -152,8 +182,10 @@
     <!-- Fila 4 -->
     <Button
         android:id="@+id/btn0"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="0"
         android:textColor="#FFFFFF"
@@ -161,8 +193,10 @@
 
     <Button
         android:id="@+id/btnPunto"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="."
         android:textColor="#FFFFFF"
@@ -170,8 +204,10 @@
 
     <Button
         android:id="@+id/btnIgual"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="="
         android:textColor="#FFFFFF"
@@ -179,8 +215,10 @@
 
     <Button
         android:id="@+id/btnSuma"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="+"
         android:textColor="#FFFFFF"
@@ -192,6 +230,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
         android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="C"
@@ -202,6 +241,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
         android:layout_gravity="fill"
         android:backgroundTint="#4B5320"
         android:text="AC"

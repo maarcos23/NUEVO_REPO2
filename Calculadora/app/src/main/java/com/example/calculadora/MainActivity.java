@@ -32,14 +32,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Muestra un número sin ".0" si es entero
+    private String formatear(double valor) {
+        if (valor == (long) valor) {
+            return String.valueOf((long) valor);
+        }
+        return String.valueOf(valor);
+    }
+
     // numeros
     public void clicarNumero(View view) {
         Button b = (Button) view;
         String digito = b.getText().toString();
         String textoActual = tvDisplay.getText().toString();
-        // Control: Que los números no comiencen por "0" (si hay un "0", lo reemplazamos)
-        // o si venimos de pulsar una operación, limpiamos para poner el nuevo número.
-        if (textoActual.equals("0") ) {
+        if (textoActual.equals("0") || textoActual.equals("Error")) {
             tvDisplay.setText(digito);
             nuevonum= false;
         } else {
@@ -50,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
     //    "."
     public void clicarPunto(View view) {
         String textoActual = tvDisplay.getText().toString();
+
+        if (textoActual.equals("Error")) {
+            return;
+        }
 
         // Control: Que no se puedan meter 2 comas/puntos en el mismo número
         if (!textoActual.contains(".")) {
@@ -81,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
     // AC
     public void clicarAC(View view) {
         tvDisplay.setText("0");
+        tvOperacion.setText("");
         num1 = 0.0;
         operacion = "";
         nuevonum = false;
@@ -89,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
     // C
     public void clicarC(View view) {
         String textoActual = tvDisplay.getText().toString();
+
+        if (textoActual.equals("Error")) {
+            tvDisplay.setText("0");
+            return;
+        }
 
         if (textoActual.length() > 1) {
             // Quitamos el último carácter
@@ -102,6 +118,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clicarIgual(View view) {
+        if (tvDisplay.getText().toString().equals("Error")) {
+            return; // evita el crash con parseDouble
+        }
+
         double num2 = Double.parseDouble(tvDisplay.getText().toString());
         double resultado = 0.0;
 
@@ -123,14 +143,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        tvOperacion.setText(tvOperacion.getText().toString() + " "
-        + num2 + " =");
+        tvOperacion.setText(tvOperacion.getText().toString() + " " + formatear(num2) + " =");
 
-        if (resultado == (long) resultado) {
-            tvDisplay.setText(String.valueOf((long) resultado));
-        } else {
-            tvDisplay.setText(String.valueOf(resultado));
-        }
+        tvDisplay.setText(formatear(resultado));
 
         operacion = "";
         nuevonum=true;
