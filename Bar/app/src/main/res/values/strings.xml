@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bar</string>
+    <string name="hint_camarero">Nombre camarero</string>
+    <string name="hint_cuenta">Total cuenta</string>
+    <string name="propina">¿Propina?</string>
+    <string name="efectivo">Efectivo</string>
+    <string name="tarjeta">Tarjeta</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="err_vacio">Falta meter el valor de la cuenta</string>
+    <string name="err_num">Debe ser un número mayor a 0</string>
+</resources>
